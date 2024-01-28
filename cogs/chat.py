@@ -42,7 +42,7 @@ class ChatBot(commands.Cog):
                 messages = [{
                     'role': 'user',
                     'content': f'[{ms.author.name}]: {ms.content}' if not ms.author.bot else f"[Meowybot]:{ms.content}"
-                } for ms in self.z[m.channel.id] if len(m.content) < 200]
+                } for ms in self.z[m.channel.id] if len(ms.content) < 200]
 
                 response = client.chat.completions.create(
                     model='gpt-4-0125-preview',
